@@ -1,0 +1,4 @@
+default recursion limit: 1000
+quick_sort(sorted 1000)             : RecursionError -- maximum recursion depth exceeded
+randomized_quick_sort(sorted 1000)  : ok
+after sys.setrecursionlimit(5000)   : quick_sort(sorted 1000) ok

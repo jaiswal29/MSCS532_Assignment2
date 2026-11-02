@@ -1,0 +1,85 @@
+algorithm,dataset,n,trials,time_min_s,time_median_s,aux_peak_bytes,comparisons,status
+merge_sort,sorted,1000,5,0.001102,0.001167,8424,5044,ok
+quick_sort,sorted,1000,5,0.031100,0.031294,47696,499500,ok
+randomized_quick_sort,sorted,1000,5,0.001073,0.001103,4376,11298,ok
+builtin_sorted,sorted,1000,5,0.000010,0.000011,16112,,ok
+merge_sort,reverse,1000,5,0.001042,0.001076,8424,4932,ok
+quick_sort,reverse,1000,5,0.023633,0.023912,47664,499500,ok
+randomized_quick_sort,reverse,1000,5,0.001076,0.001091,4440,11007,ok
+builtin_sorted,reverse,1000,5,0.000011,0.000012,16112,,ok
+merge_sort,random,1000,5,0.001292,0.001323,8424,8709,ok
+quick_sort,random,1000,5,0.000818,0.000853,1504,10803,ok
+randomized_quick_sort,random,1000,5,0.001119,0.001157,4632,10502,ok
+builtin_sorted,random,1000,5,0.000109,0.000114,16112,,ok
+merge_sort,sorted,2000,5,0.002335,0.002822,16424,11088,ok
+quick_sort,sorted,2000,5,0.131013,0.134974,111696,1999000,ok
+randomized_quick_sort,sorted,2000,5,0.002273,0.002446,4760,25324,ok
+builtin_sorted,sorted,2000,5,0.000019,0.000019,32112,,ok
+merge_sort,reverse,2000,5,0.002328,0.002383,16424,10864,ok
+quick_sort,reverse,2000,5,0.095836,0.097170,111664,1999000,ok
+randomized_quick_sort,reverse,2000,5,0.002501,0.002556,4744,26478,ok
+builtin_sorted,reverse,2000,5,0.000020,0.000020,32112,,ok
+merge_sort,random,2000,5,0.002791,0.002829,16424,19404,ok
+quick_sort,random,2000,5,0.001732,0.001765,1680,23647,ok
+randomized_quick_sort,random,2000,5,0.002528,0.002616,4824,26616,ok
+builtin_sorted,random,2000,5,0.000237,0.000263,32112,,ok
+merge_sort,sorted,5000,5,0.006484,0.006529,40424,32004,ok
+quick_sort,sorted,5000,5,0.837887,0.870258,,12497500,ok (memory not probed: tracemalloc cost)
+randomized_quick_sort,sorted,5000,5,0.006096,0.006156,5128,73669,ok
+builtin_sorted,sorted,5000,5,0.000041,0.000041,80112,,ok
+merge_sort,reverse,5000,5,0.006159,0.006356,40424,29804,ok
+quick_sort,reverse,5000,5,0.580351,0.660240,,12497500,ok (memory not probed: tracemalloc cost)
+randomized_quick_sort,reverse,5000,5,0.006055,0.006141,4936,69116,ok
+builtin_sorted,reverse,5000,5,0.000044,0.000046,80112,,ok
+merge_sort,random,5000,5,0.007775,0.007828,40424,55263,ok
+quick_sort,random,5000,5,0.005399,0.005584,1824,74263,ok
+randomized_quick_sort,random,5000,5,0.006387,0.006561,5016,70263,ok
+builtin_sorted,random,5000,5,0.000658,0.000690,80112,,ok
+merge_sort,sorted,10000,5,0.013548,0.013768,80424,69008,ok
+quick_sort,sorted,10000,5,3.388430,3.522779,,49995000,ok (memory not probed: tracemalloc cost)
+randomized_quick_sort,sorted,10000,5,0.013170,0.013208,5576,169513,ok
+builtin_sorted,sorted,10000,5,0.000084,0.000087,160112,,ok
+merge_sort,reverse,10000,5,0.013429,0.013905,80424,64608,ok
+quick_sort,reverse,10000,5,2.384675,2.510768,,49995000,ok (memory not probed: tracemalloc cost)
+randomized_quick_sort,reverse,10000,5,0.013220,0.013325,5272,155162,ok
+builtin_sorted,reverse,10000,5,0.000085,0.000094,160112,,ok
+merge_sort,random,10000,5,0.016823,0.016905,80424,120397,ok
+quick_sort,random,10000,5,0.012160,0.012257,2400,166695,ok
+randomized_quick_sort,random,10000,5,0.014458,0.014564,5400,151101,ok
+builtin_sorted,random,10000,5,0.001461,0.001482,160112,,ok
+merge_sort,sorted,20000,5,0.029296,0.029304,160424,148016,ok
+quick_sort,sorted,20000,5,14.467049,14.740602,,199990000,ok (memory not probed: tracemalloc cost)
+randomized_quick_sort,sorted,20000,5,0.027291,0.027549,5976,346484,ok
+builtin_sorted,sorted,20000,5,0.000159,0.000175,320112,,ok
+merge_sort,reverse,20000,5,0.028640,0.028740,160424,139216,ok
+quick_sort,reverse,20000,5,10.233869,10.584115,,199990000,ok (memory not probed: tracemalloc cost)
+randomized_quick_sort,reverse,20000,5,0.027609,0.027736,5336,330414,ok
+builtin_sorted,reverse,20000,5,0.000169,0.000194,320112,,ok
+merge_sort,random,20000,5,0.035621,0.035706,160424,260866,ok
+quick_sort,random,20000,5,0.023898,0.024314,2464,343300,ok
+randomized_quick_sort,random,20000,5,0.032121,0.034289,5448,344488,ok
+builtin_sorted,random,20000,5,0.003172,0.003623,320112,,ok
+merge_sort,sorted,50000,3,0.078208,0.079120,400424,401952,ok
+quick_sort,sorted,50000,0,,,,,skipped (Theta(n^2))
+randomized_quick_sort,sorted,50000,3,0.070926,0.073422,5464,912115,ok
+builtin_sorted,sorted,50000,3,0.000483,0.000587,800112,,ok
+merge_sort,reverse,50000,3,0.079937,0.088925,400424,382512,ok
+quick_sort,reverse,50000,0,,,,,skipped (Theta(n^2))
+randomized_quick_sort,reverse,50000,3,0.074381,0.115104,5528,914785,ok
+builtin_sorted,reverse,50000,3,0.000549,0.000561,800112,,ok
+merge_sort,random,50000,3,0.096634,0.111600,400424,718328,ok
+quick_sort,random,50000,3,0.068155,0.074684,2336,921243,ok
+randomized_quick_sort,random,50000,3,0.087014,0.087317,5592,936735,ok
+builtin_sorted,random,50000,3,0.008590,0.008737,800112,,ok
+merge_sort,sorted,100000,3,0.164547,0.165459,800424,853904,ok
+quick_sort,sorted,100000,0,,,,,skipped (Theta(n^2))
+randomized_quick_sort,sorted,100000,3,0.154679,0.162674,5592,1971302,ok
+builtin_sorted,sorted,100000,3,0.001070,0.001088,1600112,,ok
+merge_sort,reverse,100000,3,0.165964,0.167163,800424,815024,ok
+quick_sort,reverse,100000,0,,,,,skipped (Theta(n^2))
+randomized_quick_sort,reverse,100000,3,0.155904,0.164181,5704,1984398,ok
+builtin_sorted,reverse,100000,3,0.001142,0.001337,1600112,,ok
+merge_sort,random,100000,3,0.218383,0.218699,800424,1536552,ok
+quick_sort,random,100000,3,0.152029,0.168335,2896,2127668,ok
+randomized_quick_sort,random,100000,3,0.174801,0.175761,5768,2021812,ok
+builtin_sorted,random,100000,3,0.019301,0.019315,1600112,,ok
