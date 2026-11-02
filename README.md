@@ -39,7 +39,7 @@ python docs/build_report.py && python docs/render.py docs/report.html report.pdf
 
 | Algorithm | Input | n = 10,000 | n = 20,000 | n = 100,000 |
 |---|---|---:|---:|---:|
-| Merge sort | sorted / reverse / random | 0.014 / 0.014 / 0.017 s | 0.029 / 0.029 / 0.036 s | 0.166 / 0.167 / 0.219 s |
+| Merge sort | sorted / reverse / random | 0.014 / 0.014 / 0.017 s | 0.029 / 0.029 / 0.036 s | 0.165 / 0.167 / 0.219 s |
 | Quicksort (last-element pivot) | sorted / reverse / random | 3.52 / 2.51 / 0.012 s | 14.7 / 10.6 / 0.024 s | — / — / 0.168 s |
 | Randomized quicksort | sorted / reverse / random | 0.013 / 0.013 / 0.015 s | 0.028 / 0.028 / 0.034 s | 0.163 / 0.164 / 0.176 s |
 | Python `sorted()` (reference) | sorted / reverse / random | 0.0001 / 0.0001 / 0.0015 s | 0.0002 / 0.0002 / 0.0036 s | 0.0011 / 0.0013 / 0.019 s |

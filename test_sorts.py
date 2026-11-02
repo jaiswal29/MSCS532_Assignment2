@@ -36,6 +36,15 @@ class Rec:
 
 class SortTests(unittest.TestCase):
 
+    def setUp(self):
+        # Deterministic quicksort recurses n deep on sorted input, so give the
+        # tests more than Python's default 1,000 frames; restored in tearDown.
+        self._saved_limit = sys.getrecursionlimit()
+        sys.setrecursionlimit(10_000)
+
+    def tearDown(self):
+        sys.setrecursionlimit(self._saved_limit)
+
     def check_all(self, data):
         expected = sorted(data)
         for name, fn in SORTS.items():
@@ -90,7 +99,7 @@ class SortTests(unittest.TestCase):
     def test_partition_sorted_input_recursion_depth(self):
         """Deterministic quicksort on sorted input recurses n deep."""
         n = 2000
-        sys.setrecursionlimit(1000)
+        sys.setrecursionlimit(1000)             # Python's default
         with self.assertRaises(RecursionError):
             quick_sort(list(range(n)))
         sys.setrecursionlimit(10_000)

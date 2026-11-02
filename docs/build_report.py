@@ -147,7 +147,17 @@ def main():
     V["MS_RAND_100K"] = f"{t(R, 'merge_sort', 'random', 100_000):.3f}"
     V["MS_SORTED_100K"] = f"{t(R, 'merge_sort', 'sorted', 100_000):.3f}"
     V["QS_OVER_MS_COMPS"] = f"{comps(R, 'quick_sort', 'random', 100_000) / comps(R, 'merge_sort', 'random', 100_000):.1f}"
-    V["RQS_SLOWER_PCT"] = f"{(t(R, 'randomized_quick_sort', 'random', 100_000) / t(R, 'quick_sort', 'random', 100_000) - 1) * 100:.0f}"
+    slow = [(t(R, 'randomized_quick_sort', 'random', n) / t(R, 'quick_sort', 'random', n) - 1) * 100 for n in sizes]
+    V["RQS_SLOWER_MIN"] = f"{min(slow):.0f}"
+    V["RQS_SLOWER_MAX"] = f"{max(slow):.0f}"
+    V["QS_REV_20K"] = f"{t(R, 'quick_sort', 'reverse', 20_000):.1f}"
+    V["MS_SORTED_VS_RAND_PCT"] = f"{comps(R, 'merge_sort', 'sorted', 100_000) / comps(R, 'merge_sort', 'random', 100_000) * 100:.0f}"
+    noise = []
+    for alg in ["merge_sort", "quick_sort", "randomized_quick_sort"]:
+        for n in (50_000, 100_000):
+            r = R[(alg, "random", n)]
+            noise.append((float(r["time_median_s"]) / float(r["time_min_s"]) - 1) * 100)
+    V["NOISE_PCT"] = f"{max(noise):.0f}"
     V["BUILTIN_SPEEDUP_RAND"] = f"{t(R, 'merge_sort', 'random', 100_000) / t(R, 'builtin_sorted', 'random', 100_000):.0f}"
 
     out = TEMPLATE.read_text()
@@ -160,7 +170,7 @@ def main():
     print("wrote", OUT)
     for k in ["MS_RAND_RATIO", "RQS_RAND_RATIO", "QS_SORTED_RATIO", "QS_REV_RATIO", "QS_VS_RQS_20K",
               "MS_RAND_RATIO_C", "MS_SORTED_RATIO_C", "RQS_RAND_RATIO_C", "QS_OVER_MS_COMPS",
-              "RQS_SLOWER_PCT", "BUILTIN_SPEEDUP_RAND", "MS_MEM_100K", "QS_MEM_RAND_100K"]:
+              "RQS_SLOWER_MIN", "RQS_SLOWER_MAX", "NOISE_PCT", "MS_SORTED_VS_RAND_PCT", "BUILTIN_SPEEDUP_RAND", "MS_MEM_100K", "QS_MEM_RAND_100K"]:
         print(f"  {k:22s} {V[k]}")
 
 
